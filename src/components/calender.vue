@@ -17,7 +17,7 @@
               </router-link>
             <router-link to="/agenda">
             <div class="item">
-              <img src="../assets/calendar_a.png" alt="">
+              <img src="../assets/calendar.png" alt="">
               <p>
                 Agenda Harian Siswa
               </p>
@@ -25,7 +25,7 @@
             </router-link>
             <router-link to="calendar">
             <div class="item active">
-              <img src="../assets/absen.png" alt="">
+              <img src="../assets/absen_a.png" alt="">
               <p>Absensi Siswa</p>
             </div>
             </router-link>
@@ -44,20 +44,50 @@
           </div>
         </div>
         <div class="content">
-          <router-view></router-view>
+          <router-view></router-view> 
+          <div class="main">
+          <div class="calendar-holder">
+            <calendar :events="events" />
+          </div>
+          <div class="form-holder">
+            <h3>Schedule an event</h3>
+            <event-form />
+          </div>
+        </div>
     </div>
     </div>
 </template>
 
-<script>
-export default {
-  name: 'calendar',
-  data () {
-    return {
+ <script>
+    import Calendar from './Calendar.vue'
+    import EventForm from './EventForm.vue'
+    import Pusher from 'pusher-js';
+    export default {
+      name: 'calender',
+      components: {
+        Calendar,
+        EventForm
+      },
+      data(){
+        return {
+          events: [] 
+        }
+      },
+        created(){
+        const pusher = new Pusher('b5945df4e03f80ba788f', {
+          cluster: 'ap1',
+          encrypted: true,
+        });
+        const channel = pusher.subscribe('schedule');
+        channel.bind('new-event', (data) => {
+          this.events = [
+            ...this.events,
+            data
+          ];
+        })
+      }
     }
-  }
-}
-</script>
+    </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Nunito:600');
@@ -137,4 +167,35 @@ export default {
     border-left: 3px solid #508EEC;
     color: #508EEC;
   }
+    .content{
+    background-color: #f7fafc;
+    min-height: 100vh;
+    grid-column: 2/3;
+    display: grid;
+    grid-gap: 50px;
+    width: 100%;
+    padding: 40px;
+    position: relative;
+  }
+  .content > div{
+      background: white;
+  }
+   .main {
+      display: flex;
+      align-items: center;
+    }
+    .calendar-holder {
+      width: 65%;
+    }
+    .form-holder {
+      width: 35%;
+    }
+    .form-holder > h3 {
+      color: orangered;
+      text-transform: uppercase;
+      font-size: 16px;
+      text-align: left;
+      margin-left: 30px;
+      margin-bottom: 10px;
+    }
 </style>
