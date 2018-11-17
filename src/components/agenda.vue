@@ -23,10 +23,12 @@
               </p>
             </div>
             </router-link>
+            <router-link to="calendar">
             <div class="item">
               <img src="../assets/absen.png" alt="">
               <p>Absensi Siswa</p>
             </div>
+            </router-link>
             <div class="item">
               <img src="../assets/nilai.png" alt="">
               <p>Nilai Siswa</p>

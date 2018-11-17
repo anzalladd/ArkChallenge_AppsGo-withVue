@@ -7,7 +7,7 @@ import agenda from '../components/agenda'
 import admin from '../components/admin'
 import utama from '@/components/utama'
 import firebase from 'firebase'
-
+import calender from '@/components/calender'
 Vue.use(Router)
 export const router = new Router({
   routes: [
@@ -40,6 +40,11 @@ export const router = new Router({
       path: '/utama',
       name: 'utama',
       component: utama
+    },
+    {
+      path: '/calendar',
+      name: 'calendar',
+      component: calender
     }
 
   ]

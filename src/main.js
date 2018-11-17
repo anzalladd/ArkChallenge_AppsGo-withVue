@@ -8,7 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import firebase from 'firebase'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Vuetify from 'vuetify'
 
+Vue.use(Vuetify)
 let app
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.use(BootstrapVue)
