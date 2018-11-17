@@ -41,13 +41,12 @@
               <img src="../assets/bayar.png" alt="">
               <p>Informasi Spp</p>
             </div>
-          <b-btn variant="primary lg" @click="logout">Log Out</b-btn>
           </div>
         </div>
         <div class="content">
           <router-view></router-view>
     </div>
-   
+    </div>
 </template>
 
 <script>
