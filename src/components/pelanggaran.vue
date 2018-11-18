@@ -24,8 +24,8 @@
             </div>
             </router-link>
             <router-link to="calendar">
-            <div class="item active">
-              <img src="../assets/absen_a.png" alt="">
+            <div class="item">
+              <img src="../assets/absen.png" alt="">
               <p>Absensi Siswa</p>
             </div>
             </router-link>
@@ -35,10 +35,12 @@
               <p>Nilai Siswa</p>
             </div>
             </router-link>
-            <div class="item">
-              <img src="../assets/pelanggaran.png" alt="">
+            <router-link to="pelanggaran">
+            <div class="item active">
+              <img src="../assets/pelanggaran_1.png" alt="">
               <p>Pelanggaran Siswa</p>
             </div>
+            </router-link>
             <div class="item">
               <img src="../assets/bayar.png" alt="">
               <p>Informasi Spp</p>
@@ -47,54 +49,94 @@
         </div>
         <div class="content">
           <router-view></router-view> 
-          <div class="main">
-          <div class="calendar-holder">
-            <calendar :events="events" />
-          </div>
-        </div>
+
     </div>
     </div>
 </template>
 
  <script>
-    import Calendar from './Calendar.vue'
-    import EventForm from './EventForm.vue'
-    import Pusher from 'pusher-js';
     export default {
-      name: 'calender',
+      name: 'nilai',
       components: {
-        Calendar,
-        EventForm
       },
       data(){
-        return {
-          events: [{
-            title     :  'event1',
-            start     : '2018-07-09',
-            cssClass  : 'blue',
-            YOUR_DATA : {}
-          },
-          {
-            title     : 'event2',
-            start     : '2018-07-10',
-            end       : '2018-07-13',
-            cssClass  : ['orange']
-          }] 
+        return { 
+          hasils:[
+            {
+              mapel: 'Pendidikan Agama',
+              uh_1: 'UH :1 90',
+              uh_2: 'UH :2 80',
+              uh_3: 'UH :3 85'
+            },
+            {
+              mapel : 'PKn',
+              uh_1 : 'UH : 1 78',
+              uh_2 : 'UH : 2 85',
+              uh_3 : 'UH : 3 80',
+            },
+            {
+mapel : 'Matematika',
+              uh_1 : 'UH : 1 90',
+              uh_2 : 'UH : 2 85',
+              uh_3 : 'UH : 3 70',
+            },
+            {
+            mapel : 'Bahasa Indonesia',
+              uh_1 : 'UH : 1 80',
+              uh_2 : 'UH : 2 95',
+              uh_3 : 'UH : 3 80',
+            },
+            {
+            mapel : 'Bahasa Inggris',
+              uh_1 : 'UH : 1 100',
+              uh_2 : 'UH : 2 75',
+              uh_3 : 'UH : 3 90',
+            },
+            {
+            mapel : 'Bahasa Jawa',
+              uh_1 : 'UH : 1 50',
+              uh_2 : 'UH : 2 70',
+              uh_3 : 'UH : 3 80',
+            },
+             {
+            mapel : 'KK1',
+              uh_1 : 'UH : 1 90',
+              uh_2 : 'UH : 2 95',
+              uh_3 : 'UH : 3 90',
+            },
+             {
+            mapel : 'KK2',
+              uh_1 : 'UH : 1 80',
+              uh_2 : 'UH : 2 75',
+              uh_3 : 'UH : 3 95',
+            },
+             {
+            mapel : 'KK3',
+              uh_1 : 'UH : 1 100',
+              uh_2 : 'UH : 2 85',
+              uh_3 : 'UH : 3 90',
+            },
+             {
+            mapel : 'KK4',
+              uh_1 : 'UH : 1 80',
+              uh_2 : 'UH : 2 90',
+              uh_3 : 'UH : 3 85',
+            },
+             {
+            mapel : 'KK5-A',
+              uh_1 : 'UH : 1 90',
+              uh_2 : 'UH : 2 100',
+              uh_3 : 'UH : 3 80',
+            },
+             {
+            mapel : 'KK5-B',
+              uh_1 : 'UH : 1 70',
+              uh_2 : 'UH : 2 65',
+              uh_3 : 'UH : 3 80',
+            },
+          ]
         }
       },
-        created(){
-        const pusher = new Pusher('b5945df4e03f80ba788f', {
-          cluster: 'ap1',
-          encrypted: true,
-        });
-        const channel = pusher.subscribe('schedule');
-        channel.bind('new-event', (data) => {
-          this.events = [
-            ...this.events,
-            data
-          ];
-        })
-      }
     }
     </script>
 <style scoped>
@@ -180,11 +222,11 @@
     background-color: #f7fafc;
     min-height: 100vh;
     grid-column: 2/3;
-    display: grid;
-    grid-gap: 50px;
+    display: flex;
     width: 100%;
     padding: 40px;
     position: relative;
+    flex-direction: row;
   }
   .content > div{
       background: white;
@@ -208,5 +250,69 @@
       margin-left: 30px;
       margin-bottom: 10px;
     }
-
+    .first{
+      min-height: 100vh;
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .first .head1{
+      display: flex;
+      flex-direction: row;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .first .head1 p{
+      font-size: 20px;
+      font-weight: 400;
+      padding: 60px 60px 30px 60px;
+    }
+    .hasil{
+      display: grid;
+      grid-template-columns: repeat(4, 25%);
+      border: 1px solid black;
+      margin-top: 20px;
+      height: 60px;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+    }
+    .hasil p{
+      font-size: 18px;
+      margin-left: 20px;
+    }
+    .activ{
+      margin-bottom: 20px;
+      border-bottom: 3px solid  #508EEC;
+      
+    }
+    .second{
+      width: 30%;
+      background-color: red;
+      min-height: 100vh;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      
+    }
+    .cards .card:nth-child(1){
+      width: 100%;
+      height: 300px;
+      background-image: url('../assets/biru.png');
+      margin-top: 50px;
+    }
+    .cards .card:nth-child(2){
+      width: 100%;
+      height: 300px;
+      margin-top: 50px;
+      background-image: url('../assets/merah.png')
+    }
+      .second .head2 p{
+      font-size: 20px;
+      font-weight: 400;
+      padding: 60px 60px 30px 60px;
+    }
 </style>

@@ -8,6 +8,8 @@ import admin from '../components/admin'
 import utama from '@/components/utama'
 import firebase from 'firebase'
 import calender from '@/components/calender'
+import nilai from '@/components/nilai'
+import pelanggaran from '@/components/pelanggaran'
 Vue.use(Router)
 export const router = new Router({
   routes: [
@@ -45,6 +47,16 @@ export const router = new Router({
       path: '/calendar',
       name: 'calendar',
       component: calender
+    },
+    {
+      path: '/nilai',
+      name: 'nilai',
+      component: nilai
+    },
+    {
+      path: '/pelanggaran',
+      name: 'pelanggaran',
+      component: pelanggaran
     }
 
   ]

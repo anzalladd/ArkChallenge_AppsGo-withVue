@@ -4,8 +4,8 @@
             <div class="profile">
               <b-img rounded="circle" blank width="75" height="75" blank-color="#777" alt="img" class="s-3" />
               <span>
-                <p>Bernadaely</p>
-                <p>Ortu Andika</p>
+                <p>Sefiraa</p>
+                <p>Ortu Raisa</p>
                 </span>
             </div>
             <div class="items">
@@ -29,10 +29,12 @@
               <p>Absensi Siswa</p>
             </div>
             </router-link>
+            <router-link to="nilai">
             <div class="item">
               <img src="../assets/nilai.png" alt="">
               <p>Nilai Siswa</p>
             </div>
+            </router-link>
             <div class="item">
               <img src="../assets/pelanggaran.png" alt="">
               <p>Pelanggaran Siswa</p>

@@ -5,8 +5,8 @@
             <div class="profile">
               <b-img rounded="circle" blank width="75" height="75" blank-color="#777" alt="img" class="s-3" />
               <span>
-                <p>Bernadaely</p>
-                <p>Ortu Andika</p>
+                <p>Sefiraa</p>
+                <p>Ortu Raisa</p>
                 </span>
             </div>
             <div class="items">
@@ -28,10 +28,12 @@
               <p>Absensi Siswa</p>
             </div>
             </router-link>
+            <router-link to="nilai">
             <div class="item">
               <img src="../assets/nilai.png" alt="">
               <p>Nilai Siswa</p>
             </div>
+            </router-link>
             <div class="item">
               <img src="../assets/pelanggaran.png" alt="">
               <p>Pelanggaran Siswa</p>
@@ -234,9 +236,9 @@ export default {
     min-height: 100vh;
     grid-column: 2/3;
     display: grid;
-    grid-template-columns: 60% 37%;
+    grid-template-columns: 60% 30%;
     grid-template-rows: 20% 55% 15%;
-    grid-gap: 50px;
+    grid-gap: 50px; 
     width: 100%;
     padding: 40px;
     position: relative;
@@ -297,7 +299,7 @@ export default {
   }
   .body .berita img{
       width: 85%;
-      height: 300px;
+      height: 350px;
   }
   hr{
       width: 85%;
@@ -316,15 +318,18 @@ export default {
       background: green;
   }
   .list h1 {
-      padding: 35px;
+      padding: 50px;
   }
   .tabel{
       height: 80%;
       width: 85%;
-      margin: 10px 35px;
+      margin:10px 35px;
   }
   .tabel tr td:nth-child(2){
       float: right;
+  }
+  .tabel tr td:nth-child(1){
+      float: left;
   }
   .link{
       display: flex;
