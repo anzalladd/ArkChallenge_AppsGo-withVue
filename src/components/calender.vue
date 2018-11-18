@@ -35,14 +35,18 @@
               <p>Nilai Siswa</p>
             </div>
             </router-link>
+              <router-link to="pelanggaran">
             <div class="item">
               <img src="../assets/pelanggaran.png" alt="">
               <p>Pelanggaran Siswa</p>
             </div>
+            </router-link>
+       <router-link to="spp">
             <div class="item">
               <img src="../assets/bayar.png" alt="">
               <p>Informasi Spp</p>
             </div>
+            </router-link>
           </div>
         </div>
         <div class="content">
@@ -50,6 +54,7 @@
           <div class="main">
           <div class="calendar-holder">
             <calendar :events="events" />
+            
           </div>
         </div>
     </div>
@@ -69,15 +74,15 @@
       data(){
         return {
           events: [{
-            title     :  'event1',
-            start     : '2018-07-09',
+            title     :  'Ijin',
+            start     : '2018-11-09',
             cssClass  : 'blue',
             YOUR_DATA : {}
           },
           {
-            title     : 'event2',
-            start     : '2018-07-10',
-            end       : '2018-07-13',
+            title     : 'Sakit',
+            start     : '2018-11-13',
+            end       : '2018-11-15',
             cssClass  : ['orange']
           }] 
         }

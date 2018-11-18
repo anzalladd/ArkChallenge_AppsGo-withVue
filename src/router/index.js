@@ -10,6 +10,7 @@ import firebase from 'firebase'
 import calender from '@/components/calender'
 import nilai from '@/components/nilai'
 import pelanggaran from '@/components/pelanggaran'
+import spp from '@/components/spp'
 Vue.use(Router)
 export const router = new Router({
   routes: [
@@ -57,6 +58,11 @@ export const router = new Router({
       path: '/pelanggaran',
       name: 'pelanggaran',
       component: pelanggaran
+    },
+    {
+      path: '/spp',
+      name: 'spp',
+      component: spp
     }
 
   ]

@@ -41,10 +41,12 @@
               <p>Pelanggaran Siswa</p>
             </div>
             </router-link>
+         <router-link to="spp">
             <div class="item">
               <img src="../assets/bayar.png" alt="">
               <p>Informasi Spp</p>
             </div>
+            </router-link>
           </div>
         </div>
         <div class="content">
@@ -257,7 +259,7 @@ mapel : 'Matematika',
     flex-direction: row;
   }
   .content > div{
-      background: white;
+      background: #f7fafc;
   }
    .main {
       display: flex;

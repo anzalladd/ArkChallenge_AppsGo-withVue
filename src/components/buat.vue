@@ -51,7 +51,7 @@ export default {
         firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
         (user) => {
           alert('Akun anda sudah terbuat')
-          this.$router.replace('home')
+          this.$router.replace('login')
         },
         function (err) {
           alert('Opps' + err.message)

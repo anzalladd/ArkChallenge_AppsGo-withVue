@@ -41,7 +41,7 @@
               <p>Pelanggaran Siswa</p>
             </div>
             </router-link>
-          <router-link to="spp">
+            <router-link to="spp">
             <div class="item">
               <img src="../assets/bayar.png" alt="">
               <p>Informasi Spp</p>
@@ -221,7 +221,7 @@ mapel : 'Matematika',
     color: #508EEC;
   }
     .content{
-      background: url('../assets/pela.png');
+      background: url('../assets/spp.png');
       background-size: cover;
       background-repeat: no-repeat;
     min-height: 100vh;

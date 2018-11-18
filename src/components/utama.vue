@@ -34,14 +34,18 @@
               <p>Nilai Siswa</p>
             </div>
             </router-link>
+            <router-link to="pelanggaran">
             <div class="item">
               <img src="../assets/pelanggaran.png" alt="">
               <p>Pelanggaran Siswa</p>
             </div>
+            </router-link>
+          <router-link to="spp">
             <div class="item">
               <img src="../assets/bayar.png" alt="">
               <p>Informasi Spp</p>
             </div>
+            </router-link>
             </div>
         </div>
         <div class="content">
@@ -78,7 +82,9 @@ pertama dan kedua. </p>
           </div>
           <div class="link">
               <p>Perkembangan Siswa</p>
+              <router-link to="nilai">
               <b-btn variant="primary md" class="btnn">></b-btn>
+              </router-link>   
           </div>
         </div>
     </div>
